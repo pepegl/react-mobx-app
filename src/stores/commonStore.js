@@ -3,7 +3,7 @@ import agent from '../agent';
 
 class CommonStore {
 
-  @observable appName = 'Conduit';
+  @observable appName = 'Conduit App';
   @observable token = window.localStorage.getItem('jwt');
   @observable appLoaded = false;
 
