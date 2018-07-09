@@ -61,6 +61,6 @@ at https://react-mobx.realworld.io/
     - Delete comment button (only shown to comment's author)
 - Profile page (URL: /#/@username, /#/@username/favorites )
     - Show basic user info
-    - List of articles populated from author's created articles or author's favorited articles
+    - List of articles populated from author's created articles or author's favorited articles.
 
 
