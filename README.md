@@ -31,7 +31,8 @@ If you want to change the API URL to a local server, simply edit `src/agent.js` 
 
 ## Functionality overview
 
-The example application is a social blogging site (i.e. a Medium.com clone) called "Conduit". It uses a custom API for all requests, including authentication. You can view a live demo over at https://react-mobx.realworld.io/
+The example application is a social blogging site (i.e. a Medium.com clone) called "Conduit". It uses a custom API for all requests, including authentication. You can view a live demo over
+at https://react-mobx.realworld.io/
 
 **General functionality:**
 
@@ -62,6 +63,4 @@ The example application is a social blogging site (i.e. a Medium.com clone) call
     - Show basic user info
     - List of articles populated from author's created articles or author's favorited articles
 
-<br />
 
-[![Brought to you by Thinkster](https://raw.githubusercontent.com/gothinkster/realworld/master/media/end.png)](https://thinkster.io)
