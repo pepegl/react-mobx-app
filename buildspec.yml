@@ -14,8 +14,7 @@ phases:
         commands:
             - echo Build started on `date`
             - npm run build
-            - aws s3 rm s3://react-mobx-app --recursive
-            - aws s3 cp dist s3://react-mobx-app --recursive --acl=public-read
+            - aws s3 sync build/ s3://react-mobx-app --delete --acl=public-read
             - aws cloudfront create-invalidation --distribution-id EPGE5CIY77EQ1 --paths "/*"
             - echo Build completed on `date`
 artifacts:
