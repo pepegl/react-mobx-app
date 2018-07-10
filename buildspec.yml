@@ -2,7 +2,6 @@ version: 0.2
 
 environment_variables:
     plaintext:
-        S3_BUCKET: "react-mobx-app"
         BUILD_ENV: "prod"
 phases:
     install:
@@ -14,10 +13,9 @@ phases:
     build:
         commands:
             - echo Build started on `date`
-	    - echo bucket name is `${S3_BUCKET}`
             - npm run build
-            - aws s3 rm s3://${S3_BUCKET} --recursive
-            - aws s3 cp dist s3://${S3_BUCKET} --recursive --acl=public-read
+            - aws s3 rm s3://react-mobx-app --recursive
+            - aws s3 cp dist s3://react-mobx-app --recursive --acl=public-read
             - aws cloudfront create-invalidation --distribution-id EPGE5CIY77EQ1 --paths "/*"
             - echo Build completed on `date`
 artifacts:
