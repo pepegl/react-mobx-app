@@ -10,7 +10,6 @@ phases:
             - echo Installing source NPM dependencies...
             - node -v
             - npm -v
-            - cd HubIns
             - npm install
     build:
         commands:
