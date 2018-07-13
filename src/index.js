@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom';
 import promiseFinally from 'promise.prototype.finally';
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import { useStrict } from 'mobx';
-import { Provider } from 'mobx-react';
+import {Router} from 'react-router';
+// import {useStrict} from 'mobx';
+import {Provider} from 'mobx-react';
+import createHistory from 'history/createBrowserHistory';
 
 import App from './components/App';
 
@@ -16,25 +17,26 @@ import userStore from './stores/userStore';
 import profileStore from './stores/profileStore';
 
 const stores = {
-  articlesStore,
-  commentsStore,
-  authStore,
-  commonStore,
-  editorStore,
-  userStore,
-  profileStore,
+    articlesStore,
+    commentsStore,
+    authStore,
+    commonStore,
+    editorStore,
+    userStore,
+    profileStore
 };
 
 // For easier debugging
 window._____APP_STATE_____ = stores;
 
 promiseFinally.shim();
-useStrict(true);
+// useStrict(true);
+const history = createHistory();
 
 ReactDOM.render((
-  <Provider {...stores}>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </Provider>
+    <Provider {...stores}>
+        <Router history={history}>
+            <App/>
+        </Router>
+    </Provider>
 ), document.getElementById('root'));
