@@ -3,7 +3,7 @@ import agent from '../agent';
 
 class CommonStore {
 
-  @observable appName = 'Conduit App';
+  @observable appName = 'React-Mobx App';
   @observable token = window.localStorage.getItem('jwt');
   @observable appLoaded = false;
 
